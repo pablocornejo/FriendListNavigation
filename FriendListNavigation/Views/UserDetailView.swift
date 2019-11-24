@@ -10,9 +10,9 @@ import SwiftUI
 
 struct UserDetailView: View {
     @State private var showingFullAbout = false
+    @FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
     
     let user: User
-    let users: [User]
     
     private var displayTags: [String] {
         let maxTags = 4
@@ -21,12 +21,12 @@ struct UserDetailView: View {
     
     var body: some View {
         VStack {
-            Text(user.name)
+            Text(user.wrappedName)
                 .font(.title)
                 .padding(.top)
             
             HStack {
-                Text("Works at \(user.company)")
+                Text("Works at \(user.wrappedCompany)")
                 
                 Spacer()
                 
@@ -39,9 +39,9 @@ struct UserDetailView: View {
             .padding([.bottom, .horizontal])
             
             VStack {
-                Text(user.email)
+                Text(user.wrappedEmail)
                     .font(.headline)
-                Text(user.address)
+                Text(user.wrappedAddress)
             }
             .foregroundColor(.secondary)
             
@@ -53,7 +53,7 @@ struct UserDetailView: View {
             VStack(alignment: .leading) {
                 Text("About")
                     .font(.headline)
-                Text(user.about)
+                Text(user.wrappedAbout)
                     .lineLimit(showingFullAbout ? nil : 3)
                     .padding(.vertical, 4)
                 Button(showingFullAbout ? "Less" : "More") {
@@ -65,9 +65,13 @@ struct UserDetailView: View {
             .padding(.horizontal)
             
             List {
-                Section(header: Text("\(user.name)'s friends")) {
+                Section(header: Text("\(user.wrappedName)'s friends")) {
                     ForEach(user.friends) { friend in
-                        NavigationLink(destination: UserDetailView(user: self.user(for: friend), users: self.users)) {
+                        if self.user(for: friend) != nil {
+                            NavigationLink(destination: UserDetailView(user: self.user(for: friend)!)) {
+                                Text(friend.name)
+                            }
+                        } else {
                             Text(friend.name)
                         }
                     }
@@ -77,13 +81,13 @@ struct UserDetailView: View {
         .navigationBarTitle("", displayMode: .inline)
     }
     
-    func user(for friend: Friend) -> User {
-        users.first { $0.id == friend.id } ?? User.sample
+    func user(for friend: Friend) -> User? {
+        users.first { $0.id == friend.id }
     }
 }
 
 struct UserDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        UserDetailView(user: User.sample, users: [User.sample])
+        UserDetailView(user: User.sample)
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CF1ADBE42389A27700B7E5DE /* FriendListNavigation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF1ADBE22389A27700B7E5DE /* FriendListNavigation.xcdatamodeld */; };
+		CF1ADBEA2389B5A200B7E5DE /* FilteredForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1ADBE92389B5A200B7E5DE /* FilteredForEach.swift */; };
+		CFBDF5B22389FA1F004D8900 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDF5B12389FA1F004D8900 /* User.swift */; };
 		CFBF38932389623900C30DD2 /* UserCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBF38922389623900C30DD2 /* UserCellView.swift */; };
 		CFBF38952389662300C30DD2 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBF38942389662300C30DD2 /* UserDetailView.swift */; };
 		CFBF38992389976700C30DD2 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBF38982389976700C30DD2 /* TagView.swift */; };
@@ -18,12 +20,13 @@
 		CFC054ED23895AE5003B5978 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFC054EC23895AE5003B5978 /* Preview Assets.xcassets */; };
 		CFC054F023895AE5003B5978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFC054EE23895AE5003B5978 /* LaunchScreen.storyboard */; };
 		CFC054F823895B56003B5978 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC054F723895B56003B5978 /* NetworkManager.swift */; };
-		CFC054FA23895B89003B5978 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC054F923895B89003B5978 /* User.swift */; };
 		CFC054FC23895BF2003B5978 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC054FB23895BF2003B5978 /* Friend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF1ADBE32389A27700B7E5DE /* FriendListNavigation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendListNavigation.xcdatamodel; sourceTree = "<group>"; };
+		CF1ADBE92389B5A200B7E5DE /* FilteredForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredForEach.swift; sourceTree = "<group>"; };
+		CFBDF5B12389FA1F004D8900 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CFBF38922389623900C30DD2 /* UserCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellView.swift; sourceTree = "<group>"; };
 		CFBF38942389662300C30DD2 /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		CFBF38982389976700C30DD2 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
@@ -36,7 +39,6 @@
 		CFC054EF23895AE5003B5978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFC054F123895AE5003B5978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFC054F723895B56003B5978 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		CFC054F923895B89003B5978 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CFC054FB23895BF2003B5978 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,7 @@
 				CFBF38922389623900C30DD2 /* UserCellView.swift */,
 				CFBF38942389662300C30DD2 /* UserDetailView.swift */,
 				CFBF38982389976700C30DD2 /* TagView.swift */,
+				CF1ADBE92389B5A200B7E5DE /* FilteredForEach.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -65,7 +68,7 @@
 		CFBF38972389703700C30DD2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CFC054F923895B89003B5978 /* User.swift */,
+				CFBDF5B12389FA1F004D8900 /* User.swift */,
 				CFC054FB23895BF2003B5978 /* Friend.swift */,
 				CF1ADBE22389A27700B7E5DE /* FriendListNavigation.xcdatamodeld */,
 			);
@@ -190,9 +193,10 @@
 				CFBF38932389623900C30DD2 /* UserCellView.swift in Sources */,
 				CFBF38952389662300C30DD2 /* UserDetailView.swift in Sources */,
 				CFC054FC23895BF2003B5978 /* Friend.swift in Sources */,
-				CFC054FA23895B89003B5978 /* User.swift in Sources */,
+				CF1ADBEA2389B5A200B7E5DE /* FilteredForEach.swift in Sources */,
 				CFC054E823895AE1003B5978 /* ContentView.swift in Sources */,
 				CFBF38992389976700C30DD2 /* TagView.swift in Sources */,
+				CFBDF5B22389FA1F004D8900 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FriendListNavigation/Preview Content\"";
+				DEVELOPMENT_TEAM = 7A3CKHSA94;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FriendListNavigation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -349,6 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FriendListNavigation/Preview Content\"";
+				DEVELOPMENT_TEAM = 7A3CKHSA94;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FriendListNavigation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

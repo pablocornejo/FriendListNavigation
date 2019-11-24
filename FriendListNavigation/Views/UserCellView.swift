@@ -20,13 +20,13 @@ struct UserCellView: View {
         HStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Text(user.name)
+                    Text(user.wrappedName)
                         .font(.headline)
                     Circle()
                         .frame(width: 8, height: 8)
                         .foregroundColor(user.isActive ? .green : .red)
                 }
-                Text(user.company)
+                Text(user.wrappedCompany)
             }
             
             Spacer()
@@ -40,6 +40,6 @@ struct UserCellView: View {
 
 struct UserCellView_Previews: PreviewProvider {
     static var previews: some View {
-        return UserCellView(user: User.sample)
+        UserCellView(user: User.sample)
     }
 }

@@ -6,11 +6,11 @@
 //  Copyright © 2019 Pablo Cornejo. All rights reserved.
 //
 
-import Foundation
+import CoreData
 
 struct NetworkManager {
     
-    static func fetchUsers(url: String, completion: @escaping (Result<[User], Swift.Error>) -> Void) {
+    static func fetchUsers(url: String, context: NSManagedObjectContext, completion: @escaping (Result<[User], Swift.Error>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(Error.invalidUrl))
             return
@@ -35,6 +35,7 @@ struct NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601
+                decoder.userInfo[.managedObjectContextUserInfoKey] = context
                 let users = try decoder.decode([User].self, from: data)
                 completion(.success(users))
             } catch {
